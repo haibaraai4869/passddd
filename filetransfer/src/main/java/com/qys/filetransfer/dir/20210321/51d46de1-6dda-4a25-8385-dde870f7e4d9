@@ -1,0 +1,16 @@
+1，JVM内存模型
+https://www.processon.com/diagraming/5fa8ddf8e401fd45d10a75cd
+
+2，JVM模型/JVM-JMM-CPU流程/MESI缓存一致性协议流程
+https://www.processon.com/diagraming/5fa91efd1e0853701cda21d8
+
+3，mysql模型
+https://www.processon.com/diagraming/5fa9386f5653bb25635226bd
+
+4，Redis主从节点同步流程/哨兵模式/高可用集群模式https://www.processon.com/diagraming/5fc9f3a5e0b34d4f98d1a888
+
+5，缓存数据库双写一致性
+https://www.cnblogs.com/niyl/p/13029054.html
+
+6，Synchronized/ReentrantLock/对象的模型/ConcurrentHashMap详解
+https://www.processon.com/diagraming/5fd4a8e7e401fd06ddbe811e

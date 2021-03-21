@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作文件</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+</head>
+<body>
+<form name="form1" id="form1">
+    <p>filetransfer:<input type="file" name="uploadfile" id="uploadfile"></p>
+    <p><input type="button" name="b1" value="submit" onclick="filesubmit()" /></p>
+</form>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<form action="http://localhost:8888/downloadController/downloadFile" method="get" name="form2" id="form2">
+    <p>filedownload:<input type="text" name="uuid" id="uuid"></p>
+    <p><input type="submit" value="submit"/></p>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form action="http://localhost:8888/fileInformationController/getFileInformation" method="get" name="form3" id="form3">
+    <p>getFileInformation:<input type="text" name="uuid" id="uuid2"></p>
+    <p><input type="submit" value="submit" /></p>
+</form>
+
+
+
+
+</body>
+
+<script>
+    function filesubmit() {
+        let form=document.getElementById("form1");
+        let fd =new FormData(form);
+        $.ajax({
+            url: "http://localhost:8888/uploadController/uploadFile",
+            type: "POST",
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function(result){
+                alert(result)
+            }
+        });
+        return false;
+    }
+
+    // function getfileinformation() {
+    //     let uuid=document.form3.elements['uuid2'].value;
+    //     alert(uuid)
+    //     $.ajax({
+    //         url: "http://localhost:8888/fileInformationController/getFileInformation",
+    //         type: "GET",
+    //         data: uuid,
+    //         contentType: false,
+    //         processData: false,
+    //         success: function(result){
+    //         }
+    //     });
+    //     return false;
+    // }
+
+
+    // function filedownload() {
+    //     let uuid=document.form2.elements['uuid'].value;
+    //     alert(uuid)
+    //
+    //     $.ajax({
+    //         url: "http://localhost:8888/downloadController/downloadFile",
+    //         type: "GET",
+    //         data: "uuid="+uuid,
+    //         contentType: false,
+    //         processData: false,
+    //         success: function(result){
+    //            alert("success")
+    //         }
+    //     });
+    //     return false;
+    //    ajax无法接收文件流，坑死我了！！！
+    // }
+</script>
+</html>
